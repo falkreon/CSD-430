@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+CSD430: Server Side Development
+Module 4: Java Beans
+  Assignment 2: Programming Assignment
+Isaac Ellingson
+6/28/2026
+
+Main assignment notes in results.jsp
+Input form only has minor edits from the module 3.2 programming assignment
+-->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSD430 Assignment 4.2</title>
+	<link rel="stylesheet" href="mod4_2.css">
+
+	<script>
+	function updateRange() {
+		var newVal = document.getElementById("slots").value;
+		document.getElementById("rangeVis").innerText = newVal;
+	}
+	</script>
+</head>
+<body onLoad="updateRange();">
+	
+	<header>
+		<h1>CSD430 Module 3.2 Assignment: JSP Forms</h1>
+	
+		<p>Isaac Ellingson
+		<p>6/17/2026
+	</header>
+
+	<h2>Please Answer the Following Questions About Your Turbo Encabulator</h2>
+	<form action="survey.jsp" method="POST">
+	<ul>
+	
+		<li>
+		<span>
+			<input type="checkbox" id="inverseReactiveCurrent" name="inverseReactiveCurrent" value="supplied">
+			<label for="inverseReactiveCurrent">Did your Turbo Encabulator supply sufficient inverse reactive current to your unilateral phase detractor?</label>
+		</span>
+		
+		<li>
+		Please rate how well your cardinal grammeters were automatically synchronized, with 1 being no synchronization and 5 being fully synchronized.
+		<div class="hbox">
+			<span>
+				<input type="radio" id="sync1" name="sync" value="1" required>
+				<label for="sync1">1</label>
+			</span>
+			
+			<span>
+				<input type="radio" id="sync2" name="sync" value="2">
+				<label for="sync2">2</label>
+			</span>
+			
+			<span>
+				<input type="radio" id="sync3" name="sync" value="3">
+				<label for="sync3">3</label>
+			</span>
+			
+			<span>
+				<input type="radio" id="sync4" name="sync" value="4">
+				<label for="sync4">4</label>
+			</span>
+			
+			<span>
+				<input type="radio" id="sync5" name="sync" value="5">
+				<label for="sync5">5</label>
+			</span>
+		</div>
+	
+	<li>
+		<label for="slots">Please share the number of semi-boloid slots in your stator model</label>
+		<input type="range" id="slots" name="slots" min="3" max="13" step="2" onchange="updateRange()" required><span id="rangeVis"></span>
+	
+	<li>
+		<label for="spurving">In your own words, please describe the condition and alignment of your spurving bearings.</label>
+		<textarea id="spurving" name="spurving" rows="4" cols="50">They are in a direct line with the panametric fan</textarea>
+
+	<li>
+		<label for="fumbling" >Did you experience any side-fumbling?</label>
+		<select id="fumbling" name="fumbling" required>
+			<option value="no">No, side-fumbling was effectively prevented</option>
+			<option value="waneshaft">Yes, around the waneshaft</option>
+			<option value="marzlevanes">Yes, across the hydrocoptic marzlevanes</option>
+			<option value="ambifacent">Yes, but only when the waneshaft is in non-ambifacent mode</option>
+		</select>
+		
+		
+	<li>
+		<input type="submit" value="Finish">
+	</ul>
+	</form>
+
+</body>
+</html>
