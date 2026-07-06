@@ -31,3 +31,5 @@ INSERT INTO isaacbooks VALUES
 ("Capote",           "Truman",    "In Cold Blood",          1965, 9780679745587),
 ("Beah",             "Ishmael",   "A Long Way Gone: Memoirs of a Boy Solider", 2007, 9780374531263)
 ;
+
+GRANT ALL ON `isaacbooks` TO `student1`@`localhost`;
